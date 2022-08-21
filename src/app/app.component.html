@@ -1,0 +1,19 @@
+<h2>{{title}}</h2>
+<form *ngFor="let movie of movies">
+  <h3>{{movie.name}}</h3>
+  <button
+    type="button"
+    [disabled]="movie.boletos >=movie.available"
+    (click)="addMovieBoleto(movie.name)"
+  >
+    +
+  </button>
+  {{movie.boletos}}
+  <button
+    type="button"
+    [disabled]="movie.boletos <=0"
+    (click)="removeMovieBoleto(movie.name)"
+  >
+    -
+  </button>
+</form>
